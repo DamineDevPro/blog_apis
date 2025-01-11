@@ -39,7 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
-    'blog_api'
+    'blog_api',
+    # 'rest_framework.authtoken', auth token based
 ]
 
 REST_FRAMEWORK = {
@@ -50,6 +51,15 @@ REST_FRAMEWORK = {
     'PAGE_SIZE': 5,
 }
 
+# token based authentication
+# REST_FRAMEWORK = {
+#     'DEFAULT_AUTHENTICATION_CLASSES': [
+#         'rest_framework.authentication.TokenAuthentication',
+#     ],
+#     'DEFAULT_PERMISSION_CLASSES': [
+#         'rest_framework.permissions.IsAuthenticated',
+#     ],
+# }
 SIMPLE_JWT = {
     'ACCESS_TOKEN_LIFETIME': timedelta(minutes=100), # token will expire 100 minutes after
     'REFRESH_TOKEN_LIFETIME': timedelta(days=1),  
